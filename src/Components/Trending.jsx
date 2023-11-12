@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import TrendingCard from "./TrendingCard";
+
 const Trending = () => {
   const [data, setData] = useState([]);
 
@@ -26,23 +28,10 @@ const Trending = () => {
 
       <div>
         {data.map((item) => (
-
-
-          <div key={item.id} className=" w-52 h-96 border-2 border-blue-500">
-
-            <img src={item.image} alt="" className=" w-48 h-48 object-cover" />
-            <label> {item.category}</label>
-            <h3> {item.title}</h3>
-            <p> {item.rating.rate}</p>
-            <p>{item.price}</p>
-            <div>
-              <AiOutlineShoppingCart />
-              <button> Add To Cart </button>
-            </div>
-
+         
+          <div>
+            {data ? <TrendingCard item={item} /> : <div>loading data... </div>}
           </div>
-
-
         ))}
       </div>
     </div>
