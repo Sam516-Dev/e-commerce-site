@@ -8,7 +8,7 @@ const Trending = () => {
   // const [loading, setLoading] = useState(false);
 
   async function fetchData() {
-    const response = await fetch("https://fakestoreapi.com/products");
+    const response = await fetch("https://fakestoreapi.com/products?limit=9");
     const fetchedData = await response.json();
     setData(fetchedData);
     // setLoading(false);
@@ -26,7 +26,7 @@ const Trending = () => {
         Trending Products
       </h1>
 
-      <div>
+      <div className="grid grid-cols-3 gap-6">
         {data.map((item) => (
          
           <div>
