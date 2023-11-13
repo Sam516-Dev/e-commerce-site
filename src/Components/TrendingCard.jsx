@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
-const TrendingCard = ({item}) => {
+const TrendingCard = ({ item }) => {
   const { image, category, title, rating, price, id } = item;
   console.log("here is item data", item);
 
@@ -13,7 +13,7 @@ const TrendingCard = ({item}) => {
       <p> {rating.rate}</p>
       <p>{price}</p>
 
-      <div>
+      <div className="">
         <AiOutlineShoppingCart />
         <button> Add To Cart </button>
       </div>
