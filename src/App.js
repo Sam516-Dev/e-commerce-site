@@ -12,7 +12,7 @@ import OurProducts from "./Components/OurProducts";
 import SignIn from "./Components/SignIn";
 function App() {
   return (
-    <div className="h-screens overflow-y-auto">
+    <div className="  overflow-y-auto">
       <Router>
       <Navbar />
         <Routes>

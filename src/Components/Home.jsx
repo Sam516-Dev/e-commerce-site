@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "./Hero";
 import Hero2 from "./Hero2";
 import Trending from "./Trending";
+import Hero3 from "./Hero3";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <Hero />
       <Hero2 />
       <Trending />
+      <Hero3 />
     </div>
   );
 };
