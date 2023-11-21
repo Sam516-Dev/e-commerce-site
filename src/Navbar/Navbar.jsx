@@ -46,7 +46,7 @@ const Navbar = () => {
           <AiOutlineSearch className=" ml-4 w-6 h-6" />
           <input
             className="py-3 p-3 rounded-md px-6 outline-none "
-            placeholder="search someting"
+            placeholder="Search something"
             type="text"
           ></input>
         </div>

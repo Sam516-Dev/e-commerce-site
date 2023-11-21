@@ -3,7 +3,7 @@ import Hoodies from "../Assets/Hoodies.png";
 const Hero = () => {
   return (
     <>
-      <div className="flex justify-between">
+      <div className="flex justify-between mx-32">
         <div className=" ">
           <p className=" text-base   font-medium text-orange-500">
             Starting from $500

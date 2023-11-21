@@ -2,7 +2,7 @@ import React from "react";
 import { AiFillCar } from "react-icons/ai";
 const Hero2 = () => {
   return (
-    <div className=" mt-6 flex justify-between">
+    <div className=" mt-6 flex justify-between mx-32">
       <div className="p-3   outline outline-1 outline-blue-400  px-8 align-top flex  space-x-4   rounded-sm bg-blue-200">
         <AiFillCar className="text-blue-800 mt-1 w-6 h-6" />
         <div>

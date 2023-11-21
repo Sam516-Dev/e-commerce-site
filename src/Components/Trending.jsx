@@ -21,8 +21,8 @@ const Trending = () => {
   }, []);
 
   return (
-    <div className="mt-20 ">
-      <h1 className="text-2xl font-black text-blue-900 mt-7">
+    <div className="mt-20  mx-32">
+      <h1 className="text-2xl font-black mb-5 text-blue-900 mt-7">
         Trending Products
       </h1>
 
