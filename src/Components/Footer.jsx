@@ -79,25 +79,26 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className=" bg-blue-900 text-white rounded-sm p-4">
+        <div className=" bg-blue-900 text-white rounded-md p-4">
           <h2 className=" text-lg font-semibold mb-5"> Subscribe </h2>
 
           <div>
+            <div className="relative flex ">
 
-            <div className="relative bg-red-400">
+              <div className="relative rounded-md overflow-hidden  items-center flex">
+                <input
+                  className="p-3 outline-none  rounded-md  text-blue-950"
+                  type="text"
+                  placeholder="Email Address"
+                />
 
-              <input
-                className="p-3 outline-none rounded-md my-2 text-blue-950"
-                type="text"
-                placeholder="Email Address"
-              ></input>
-              
-                <FaArrowRight className="w-7 absolute left-0 text-orange-500 h-7 " />
-             
+                <button className="bg-orange-500 right-0 absolute py-6 px-3 rounded-r-md">
+                  <FaArrowRight className="w-7 h-7   text-white" />
+                </button>
+
+              </div>
             </div>
-            {/* <button className="bg-orange-500 absolute p-3">
-                <FaArrowRight className="w-7  h-7 " />
-              </button> */}
+
             <p className=" text-sm w-56">
               Hello, we are Lift Media. Our goal is to translate the positive
               effects from revolutionizing how companies engage with their
@@ -105,6 +106,9 @@ const Footer = () => {
             </p>
           </div>
         </div>
+      </div>
+      <div className="bg-green-400 mt-8 border-t-2 border-blue-100">
+
       </div>
     </div>
   );
