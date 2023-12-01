@@ -1,5 +1,8 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaLinkedin, FaTwitter } from "react-icons/fa";
+import mySvg from "../Assets/logo.svg";
+import { FaFacebook } from "react-icons/fa";
+
 const Footer = () => {
   return (
     <div className=" h-[75vh] p-8 px-32 py-24 bg-blue-950">
@@ -84,7 +87,6 @@ const Footer = () => {
 
           <div>
             <div className="relative flex ">
-
               <div className="relative rounded-md overflow-hidden  items-center flex">
                 <input
                   className="p-3 outline-none  rounded-md  text-blue-950"
@@ -95,7 +97,6 @@ const Footer = () => {
                 <button className="bg-orange-500 right-0 absolute py-6 px-3 rounded-r-md">
                   <FaArrowRight className="w-7 h-7   text-white" />
                 </button>
-
               </div>
             </div>
 
@@ -107,9 +108,46 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-green-400 mt-8 border-t-2 border-blue-100">
 
+      <div className="mt-8 border-t-2 border-blue-100">
+        <div className="mt-8 flex justify-between" >
+          <img className="" src={mySvg} alt="myShoes" />
+          <div className="text-white ">
+            <ul className="flex gap-6">
+              <li>
+                <a href="">Terms</a>
+              </li>
+
+              <li>
+                <a href="#">Privacy</a>
+              </li>
+
+              <li>
+                <a href="#">Cookies</a>
+              </li>
+            </ul>
+          </div>
+          <div className="text-white ">
+            <ul className="flex gap-6">
+          
+              <li>
+                <a href=""><FaFacebook/></a>
+              </li>
+
+              <li>
+                <a href="#"><FaLinkedin/></a>
+              </li>
+
+              <li>
+                <a href="#"><FaTwitter/></a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
+      {/* <div className="flex justify-center items-center"> */}
+      <p className="text-white text-lg font-medium text-center mt-16">&copy;2023 all rights reserved.</p>
+      {/* </div> */}
     </div>
   );
 };
