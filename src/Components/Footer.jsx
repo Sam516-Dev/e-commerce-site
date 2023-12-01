@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+
 const Footer = () => {
   return (
     <div className=" h-[75vh] p-8 px-32 py-24 bg-blue-950">
@@ -84,7 +85,6 @@ const Footer = () => {
 
           <div>
             <div className="relative flex ">
-
               <div className="relative rounded-md overflow-hidden  items-center flex">
                 <input
                   className="p-3 outline-none  rounded-md  text-blue-950"
@@ -95,7 +95,6 @@ const Footer = () => {
                 <button className="bg-orange-500 right-0 absolute py-6 px-3 rounded-r-md">
                   <FaArrowRight className="w-7 h-7   text-white" />
                 </button>
-
               </div>
             </div>
 
@@ -107,9 +106,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-green-400 mt-8 border-t-2 border-blue-100">
-
-      </div>
+      <div className="bg-green-400 mt-8 border-t-2 border-blue-100"></div>
     </div>
   );
 };
