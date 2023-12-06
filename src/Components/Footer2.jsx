@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Footer2() {
-  return (
-    <div>Footer2</div>
-  )
+  return <div>This is out testing component ! </div>;
 }
 
-export default Footer2
+export default Footer2;
