@@ -8,9 +8,9 @@ const Cart = () => {
      <div className="flex justify-between items-center">
         <div className="flex gap-2 items-center">
           <h1 className=" font-semibold text-2xl">SHOPPING CART</h1>
-          <label className="bg-orange-500 rounded-full  px-5 p-2 font-semibold text-xl">5</label>
+          <label className="bg-orange-500 rounded-full  px-4 p-2 font-semibold text-xl">5</label>
          </div>
-         <RxCross2 className=" w-9 h-9" />
+         <RxCross2 className=" w-7 h-7" />
       </div>
       <div> </div>
       <div> </div>
