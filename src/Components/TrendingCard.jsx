@@ -12,7 +12,7 @@ const TrendingCard = ({ item }) => {
   return (
     <div
       key={id}
-      className=" w-80 h-96 relative flex flex-col border justify-between px-3 py-2 p-1 rounded-md shadow-lg border-blue-200"
+      className=" w-80 h-96 hover:shadow-2xl hover:border-orange-300 relative flex flex-col border justify-between px-3 py-2 p-1 rounded-md shadow-lg border-blue-200"
     >
       <AiOutlineHeart className=" absolute right-5 w-7 h-7 text-orange-500" />
       <img
