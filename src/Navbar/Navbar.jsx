@@ -2,8 +2,16 @@ import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import myIcon from "../Assets/Cart.svg";
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
+import { useOurContext } from "../Context/MyContext";
+
+
 
 const Navbar = () => {
+  
+  const { HandleShoppingCartClick, open } = useOurContext()
+
+
+
   return (
     <div className=" bg-blue-200 h-24 p-4 px-14 pt-6  fixed w-full top-0 z-10  ">
       <nav className="flex gap-36 justify-between items-center">
@@ -54,7 +62,7 @@ const Navbar = () => {
         <div className="flex ">
           <ul className="flex gap-4">
             <li>
-              <NavLink to="/"> Home </NavLink>
+              <NavLink to="/"> Home  </NavLink>
             </li>
             <li>
               <NavLink to="/AboutUs"> About Us </NavLink>
@@ -70,8 +78,9 @@ const Navbar = () => {
         </div>
 
         <div className=" ">
-          <AiOutlineShoppingCart className="w-8  h-8" />
+          <AiOutlineShoppingCart onClick={HandleShoppingCartClick} className="w-8 hover:cursor-pointer h-8" />
         </div>
+
       </nav>
 
       <Outlet />

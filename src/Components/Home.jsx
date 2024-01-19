@@ -10,12 +10,12 @@ const Home = () => {
   return (
     <div className=" mt-36 relative">
       
+      <Cart />
       <Hero />
       <Hero2 />
       <Trending />
       <Hero3 />
       <Footer />
-      <Cart />
     </div>
   );
 };
