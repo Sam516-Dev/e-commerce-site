@@ -14,6 +14,7 @@ const AboutUs = () => {
         cartItems.map((item,index)=>{
           return(
             <h1 key={index}> {item.category} </h1>
+            
           )
         })
       }
