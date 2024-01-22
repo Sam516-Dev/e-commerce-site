@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import myImage from "../Assets/myShoes.png";
 import { useOurContext } from "../Context/MyContext";
+import "../style/cartblurr.css"
 
 const Cart = () => {
   const { open } = useOurContext();
 
+  
+
   if (open) {
     return (
-      <div className=" w-1/3 h-auto fixed  ml-6 bg-green-100 z-10 right-10 top-20 p-3 border border-blue-800 rounded-md">
+      <>
+      {open && <div className="modal-overlay"></div>}
+      <div className=" w-1/3 h-auto fixed  ml-6 bg-green-100 z-30 right-10 top-20 p-3 border border-blue-800 rounded-md">
         <div className="flex justify-between items-center pb-5 border-b-2  border-blue-800">
           <div className="flex gap-2 items-center">
             <h1 className=" font-semibold text-xl text-blue-900">
@@ -122,6 +127,7 @@ const Cart = () => {
           PROCEED TO CHECK OUT
         </button>
       </div>
+      </>
     );
   } else {
     return null;

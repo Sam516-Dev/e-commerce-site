@@ -13,7 +13,7 @@ const Navbar = () => {
 
 
   return (
-    <div className=" bg-blue-200 h-24 p-4 px-14 pt-6  fixed w-full top-0 z-10  ">
+    <div className=" bg-blue-200 h-24 p-4 px-14 pt-6  fixed w-full top-0 z-20  ">
       <nav className="flex gap-36 justify-between items-center">
         <div>
           <svg

@@ -11,8 +11,13 @@ const MyContext = ({ children }) => {
     setOpen(!open)
   };
 
+  const handleAddToCart = ()=> {
+    console.log("you clicked cart button")
+
+  }
+
   return (
-    <useMyContext.Provider value={{ HandleShoppingCartClick, open, setOpen }}>
+    <useMyContext.Provider value={{ HandleShoppingCartClick, open, setOpen, handleAddToCart }}>
       {children}
     </useMyContext.Provider>
   );

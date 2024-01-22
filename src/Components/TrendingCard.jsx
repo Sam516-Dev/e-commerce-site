@@ -4,10 +4,12 @@ import {
   AiOutlineHeart,
   AiFillStar,
 } from "react-icons/ai";
+import { useOurContext } from "../Context/MyContext";
 
 const TrendingCard = ({ item }) => {
   const { image, category, title, rating, price, id } = item;
   // console.log("here is item data", item);
+const {handleAddToCart}= useOurContext()
 
   return (
     <div
@@ -44,7 +46,7 @@ const TrendingCard = ({ item }) => {
         <p className="flex text-blue-950 font-bold text-xl">Ksh.{price}</p>
         <div className="flex relative items-center">
           <AiOutlineShoppingCart className="flex ml-3 cursor-pointer text-white absolute w-7 h-7" />
-          <button className="flex pl-12 rounded-md bg-orange-500 p-3 text-white font-medium ">
+          <button className="flex pl-12 rounded-md bg-orange-500 p-3 text-white font-medium "  onClick={handleAddToCart}>
             Add To Cart
           </button>
         </div>
