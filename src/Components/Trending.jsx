@@ -27,12 +27,31 @@ const Trending = () => {
       </h1>
 
       <div className="grid  grid-cols-3 gap-6">
-        {data.map((item) => (
-         
-          <div>
-            {data ? <TrendingCard item={item} /> : <div>loading data... </div>}
+        {data.length > 0 ? (
+          data.map((item) => (
+            <div key={item.id}>
+              <TrendingCard item={item} />
+            </div>
+          ))
+        ) : (
+          <div className="bg-orange-500 py-4 rounded-md p-1 col-span-3 text-white font-bold text-center">
+            <svg
+              className="animate-spin h-8 w-12 mx-auto mb-2"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 4v2m0 6V4m0 10v2m-6-6h2m6 0h2m-6 6h2m6 0h2M4 12h2m2 0h10m2 0h2"
+              ></path>
+            </svg>
+            Loading data...
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
