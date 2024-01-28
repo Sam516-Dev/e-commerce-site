@@ -36,7 +36,7 @@ const Cart = () => {
 
                 <div className="flex flex-col justify-between">
                   <h2 className="text-blue-900 font-semibold text-base">
-                  {item.category}
+                    {item.category}
                   </h2>
 
                   <div className="flex gap-5 rounded-full border border-blue-900 justify-center w-36 p-1 items-center">
@@ -55,8 +55,7 @@ const Cart = () => {
                 <div className="flex flex-col justify-between items-end">
                   <RxCross2 className=" text-gray-500 w-7 h-7" />
                   <h2 className="text-blue-900 font-bold text-lg ">
-                    {" "}
-                    Ksh.3,000.00{" "}
+                    {item.price}
                   </h2>
                 </div>
               </div>
