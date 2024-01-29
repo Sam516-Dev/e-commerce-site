@@ -63,6 +63,9 @@ const Cart = () => {
                     {item.price}
                   </h2>
                 </div>
+
+
+                
               </div>
             );
           })}

@@ -5,7 +5,6 @@ const useMyContext = createContext();
 const MyContext = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [cartItems, SetcartItems] = useState([]);
-  const [cartNumber, setCartNumber] = useState(0);
 
   //function to switch between true and false
   const HandleShoppingCartClick = () => {
@@ -24,10 +23,20 @@ const MyContext = ({ children }) => {
     const newArrayItems = [...cartItems];
     newArrayItems.push(item);
     SetcartItems(newArrayItems);
-    setCartNumber(cartNumber + 1);
-    console.log("you clicked cart button with this item:", item);
   };
-  console.log("this are cartItems !!!!!! ", cartItems);
+
+  // const handleAddToCart = (item) => {
+  //   SetcartItems(item);
+  //   const newArrayItems = [...cartItems, item];
+  //   if (cartItems.some((id) => id === item.id)) {
+  //     newArrayItems.push(item);
+  //     SetcartItems(newArrayItems);
+  //   } else {
+  //     console.log("item already exists in the cart !");
+  //   }
+  //   console.log("item id is", item.id);
+  //   console.log("cartItems are : ", cartItems);
+  // };
 
   return (
     <useMyContext.Provider
@@ -37,7 +46,6 @@ const MyContext = ({ children }) => {
         setOpen,
         handleAddToCart,
         cartItems,
-        cartNumber,
         handleDeleteCartItem,
       }}
     >
