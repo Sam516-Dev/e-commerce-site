@@ -9,7 +9,7 @@ import { useOurContext } from "../Context/MyContext";
 const Navbar = () => {
   
   const { HandleShoppingCartClick, open } = useOurContext()
-  const { cartNumber } = useOurContext();
+  const { cartItems } = useOurContext();
 
 
 
@@ -80,7 +80,7 @@ const Navbar = () => {
 
         <div className="relative ">
         <label className="bg-orange-500 absolute -top-3 left-6 rounded-full w-6  text-white text-center font-normal text-l">
-                {cartNumber}
+                {cartItems.length}
               </label>
           <AiOutlineShoppingCart onClick={HandleShoppingCartClick} className="w-8 hover:cursor-pointer h-8" />
           
