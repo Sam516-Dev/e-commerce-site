@@ -17,26 +17,25 @@ const MyContext = ({ children }) => {
   };
   console.log("after removing an element !", cartItems);
 
-  //fuction to add items clicked in an Array
-  const handleAddToCart = (item) => {
-    SetcartItems(item);
-    const newArrayItems = [...cartItems];
-    newArrayItems.push(item);
-    SetcartItems(newArrayItems);
-  };
-
+  //fuction to add items clicked in an Array Cart
   // const handleAddToCart = (item) => {
   //   SetcartItems(item);
-  //   const newArrayItems = [...cartItems, item];
-  //   if (cartItems.some((id) => id === item.id)) {
-  //     newArrayItems.push(item);
-  //     SetcartItems(newArrayItems);
-  //   } else {
-  //     console.log("item already exists in the cart !");
-  //   }
-  //   console.log("item id is", item.id);
-  //   console.log("cartItems are : ", cartItems);
+  //   const newArrayItems = [...cartItems];
+  //   newArrayItems.push(item);
+  //   SetcartItems(newArrayItems);
   // };
+
+  const handleAddToCart = (item) => {
+    const itemExists = cartItems.some((cartItem) => cartItem.id === item.id);
+    if (!itemExists) {
+      // If item doesn't exist, add it to the cart
+      const newArrayItems = [...cartItems, item];
+      SetcartItems(newArrayItems);
+      console.log("Item added to cart:", item);
+    } else {
+      console.log("Item already exists in the cart!");
+    }
+  };
 
   return (
     <useMyContext.Provider
