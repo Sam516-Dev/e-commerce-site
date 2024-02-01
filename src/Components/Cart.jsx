@@ -7,7 +7,9 @@ import "../style/cartblurr.css";
 
 const Cart = () => {
   // const { open } = useOurContext();
-  const { cartItems, handleDeleteCartItem, open, handleMinusButton } =
+
+
+  const { cartItems, handleDeleteCartItem, open, handleMinusButton,totalCartPrice } =
     useOurContext();
 
   if (open) {
@@ -25,7 +27,7 @@ const Cart = () => {
             <MdDeleteOutline className=" w-7 h-7" />
           </div>
 
-          {/* second div */}
+          {/* mapping cartitems array */}
           {cartItems.map((item, id) => {
             return (
               <div
@@ -63,7 +65,7 @@ const Cart = () => {
 
                 <div className="flex flex-col justify-between items-end">
                   <RxCross2
-                    onClick={() => handleDeleteCartItem(item.id)}
+                    onClick={() => handleDeleteCartItem(item)}
                     className=" cursor-pointer text-gray-500 w-7 h-7"
                   />
                   <h2 className="text-blue-900 font-bold text-lg ">
@@ -71,14 +73,14 @@ const Cart = () => {
                   </h2>
                 </div>
               </div>
+
             );
           })}
 
           <div className="bg-orange-100 flex justify-between py-4 mt-4 border-t border-blue-800">
             <h2 className="text-blue-900 font-bold text-lg "> SUBTOTAL: </h2>
             <h2 className="text-orange-600 font-bold text-lg ">
-              {" "}
-              Ksh.12,000.00{" "}
+              {totalCartPrice}
             </h2>
           </div>
 
