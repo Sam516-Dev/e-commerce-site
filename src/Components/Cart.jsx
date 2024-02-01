@@ -7,7 +7,8 @@ import "../style/cartblurr.css";
 
 const Cart = () => {
   // const { open } = useOurContext();
-  const { cartItems, handleDeleteCartItem,open } = useOurContext();
+  const { cartItems, handleDeleteCartItem, open, handleMinusButton } =
+    useOurContext();
 
   if (open) {
     return (
@@ -27,8 +28,10 @@ const Cart = () => {
           {/* second div */}
           {cartItems.map((item, id) => {
             return (
-              <div key={item.id} className="mt-1 flex justify-between border-t-2  border-blue-800 pt-3 pb-3">
-                
+              <div
+                key={item.id}
+                className="mt-1 flex justify-between border-t-2  border-blue-800 pt-3 pb-3"
+              >
                 <div className="w-24 overflow-hidden h-24 flex bg-white border border-blue-200 rounded-lg">
                   <img
                     className=" items-center mx-auto justify-center h-24  "
@@ -43,7 +46,10 @@ const Cart = () => {
                   </h2>
 
                   <div className="flex gap-5 rounded-full border bg-white hover:bg-orange-100 border-blue-900 justify-center w-36 p-1 items-center">
-                    <button className="text-blue-900 font-bold text-2xl">
+                    <button
+                      onClick={() => handleMinusButton(item)}
+                      className="text-blue-900 font-bold text-2xl"
+                    >
                       -
                     </button>
                     <label className="text-blue-900 font-bold text-2xl border-l border-r border-blue-900 px-3">
@@ -55,17 +61,15 @@ const Cart = () => {
                   </div>
                 </div>
 
-             
-
                 <div className="flex flex-col justify-between items-end">
-                  <RxCross2 onClick={() => handleDeleteCartItem(item.id)} className=" cursor-pointer text-gray-500 w-7 h-7" />
+                  <RxCross2
+                    onClick={() => handleDeleteCartItem(item.id)}
+                    className=" cursor-pointer text-gray-500 w-7 h-7"
+                  />
                   <h2 className="text-blue-900 font-bold text-lg ">
                     {item.price}
                   </h2>
                 </div>
-
-
-                
               </div>
             );
           })}
@@ -90,9 +94,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-
-
-
-
-

@@ -37,6 +37,10 @@ const MyContext = ({ children }) => {
     }
   };
 
+  const handleMinusButton=(item)=>{
+    console.log("handleMinusButton clickt", item )
+  }
+
   return (
     <useMyContext.Provider
       value={{
@@ -46,6 +50,7 @@ const MyContext = ({ children }) => {
         handleAddToCart,
         cartItems,
         handleDeleteCartItem,
+        handleMinusButton
       }}
     >
       {children}
