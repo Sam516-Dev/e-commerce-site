@@ -21,7 +21,7 @@ const MyContext = ({ children }) => {
     settotalCartPrice(updatedPrice);
   };
 
-  console.log("checking our NAN", totalCartPrice);
+  // console.log("checking our NAN", totalCartPrice);
 
   //adding items to cart fuction
   const handleAddToCart = (item) => {
@@ -37,7 +37,7 @@ const MyContext = ({ children }) => {
     }
   };
 
-  console.log("this is totalPrice", totalCartPrice);
+  // console.log("this is totalPrice", totalCartPrice);
 
   const handleMinusButton = (item) => {
     console.log("handleMinusButton clickt", item);
