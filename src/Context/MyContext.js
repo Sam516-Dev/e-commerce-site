@@ -21,7 +21,7 @@ const MyContext = ({ children }) => {
     settotalCartPrice(updatedPrice);
   };
 
-  // console.log("checking our NAN", totalCartPrice);
+
 
   //adding items to cart fuction
   const handleAddToCart = (item) => {

@@ -16,8 +16,8 @@ const Cart = () => {
     return (
       <>
         {open && <div className="modal-overlay"></div>}
-        <div className=" w-1/3 h-auto fixed  ml-6 bg-green-100 z-30 right-10 top-20 p-3 border border-blue-800 rounded-md">
-          <div className="flex justify-between items-center pb-2">
+        <div className=" w-1/3 h-3/4 overflow-auto fixed ml-6 bg-green-100 z-30 right-10 top-20 p-3 border border-blue-800 rounded-md">
+          <div className="flex   justify-between items-center pb-2">
             <div className="flex gap-2 items-center">
               <h1 className=" font-semibold text-xl text-blue-900">
                 SHOPPING CART
