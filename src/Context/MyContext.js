@@ -6,6 +6,7 @@ const MyContext = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [cartItems, setcartItems] = useState([]);
   const [totalCartPrice, settotalCartPrice] = useState(0);
+  const [cartItemsInTheCart, setCartItemsInTheCart] =useState(1) 
 
   //function to switch between true and false
   const HandleShoppingCartClick = () => {
@@ -39,7 +40,8 @@ const MyContext = ({ children }) => {
 
   // console.log("this is totalPrice", totalCartPrice);
 
-  const handleMinusButton = (item) => {
+  const handlePlusButton = (item) => {
+    setCartItemsInTheCart(cartItemsInTheCart +1)
     console.log("handleMinusButton clickt", item);
   };
 
@@ -52,8 +54,10 @@ const MyContext = ({ children }) => {
         handleAddToCart,
         cartItems,
         handleDeleteCartItem,
-        handleMinusButton,
+        handlePlusButton,
         totalCartPrice,
+        cartItemsInTheCart,
+        setCartItemsInTheCart
       }}
     >
       {children}
