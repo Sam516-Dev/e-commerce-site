@@ -8,7 +8,7 @@ import { useOurContext } from "../Context/MyContext";
 
 const TrendingCard = ({ item }) => {
   const { image, category, title, rating, price, id } = item;
-  // console.log("here is item data", item);
+ 
 
   const { handleAddToCart } = useOurContext();
 
