@@ -6,8 +6,8 @@ const MyContext = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [cartItems, setcartItems] = useState([]);
   const [totalCartPrice, settotalCartPrice] = useState(0);
-  const [cartItemsInTheCart, setCartItemsInTheCart] =useState(1) 
-
+  const [cartItemsInTheCart, setCartItemsInTheCart] = useState(1);
+  // const [updateQuantity, setupdateQuantity] = useState(1)
   //function to switch between true and false
   const HandleShoppingCartClick = () => {
     setOpen(!open);
@@ -22,28 +22,50 @@ const MyContext = ({ children }) => {
     settotalCartPrice(updatedPrice);
   };
 
-
-
   //adding items to cart fuction
   const handleAddToCart = (item) => {
     const itemExists = cartItems.some((cartItem) => cartItem.id === item.id);
     if (!itemExists) {
       // If item doesn't exist, add it to the cart
-      const newArrayItems = [...cartItems, item];
+      const newItem = { ...item, quantity: 1 };
+      const newArrayItems = [...cartItems, newItem];
       setcartItems(newArrayItems);
       settotalCartPrice(totalCartPrice + item.price);
-      console.log("Item added to cart:", item);
+      console.log("Item added to cart:", newItem, item.quantity);
     } else {
       console.log("Item already exists in the cart!");
     }
   };
 
-  // console.log("this is totalPrice", totalCartPrice);
+  // const handlePlusButton = (clickedItemId) => {
+  //   const updatedCartItems = cartItems.map((item) => {
+  //     if (item.id === clickedItemId) {
+  //       // Increment quantity by 1 for the clicked item
+  //       return { ...item, quantity: item.quantity + 1 };
+  //     }
+  //     console.log("this is the added quantity", item.quantity)
+  //     return item;
+  //   });
+  //   return updatedCartItems;
+  // };
 
-  const handlePlusButton = (item) => {
-    setCartItemsInTheCart(cartItemsInTheCart +1)
-    console.log("handleMinusButton clickt", item);
+  const handlePlusButton = (clickedItemId) => {
+    const updatedCartItems = cartItems.map((item) => {
+      if (item.id === clickedItemId) {
+        // Increment quantity by 1 for the clicked item
+        return { ...item, quantity: item.quantity + 1 };
+      }
+      console.log("this is the added quantity", item.quantity);
+      return item;
+    });
+    setcartItems(updatedCartItems); // Update cart state with the updated items
   };
+
+  // const handlePlusButton = cartItems.map((item)=>{
+  //     if(singleItem.id == item.id){
+  //       return{...cartItems, quantity:item.quantity+1}
+  //     }
+  // })
 
   return (
     <useMyContext.Provider
@@ -57,7 +79,8 @@ const MyContext = ({ children }) => {
         handlePlusButton,
         totalCartPrice,
         cartItemsInTheCart,
-        setCartItemsInTheCart
+        setCartItemsInTheCart,
+        cartItemsInTheCart,
       }}
     >
       {children}
