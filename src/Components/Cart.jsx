@@ -31,15 +31,18 @@ const Cart = () => {
           {/* mapping cartitems array */}
           {cartItems.map((item, id) => {
             return (
+
               <div
                 key={item.id}
                 className="mt-1 flex justify-between border-t-2  border-blue-800 pt-3 pb-3"
               >
+
+
                 <div className="w-24 overflow-hidden h-24 flex bg-white border border-blue-200 rounded-lg">
                   <img
                     className=" items-center mx-auto justify-center h-24  "
                     src={item.image}
-                    alt="myShoes"
+                    alt="OurShoes"
                   />
                 </div>
 
@@ -56,9 +59,9 @@ const Cart = () => {
                       -
                     </button>
                     <label className="text-blue-900 font-bold text-2xl border-l border-r border-blue-900 px-3">
-                     {cartItemsInTheCart}
+                     {item.quantity}
                     </label>
-                    <button className="text-blue-900 font-bold text-2xl" onClick={() => handlePlusButton(item)}>
+                    <button className="text-blue-900 font-bold text-2xl" onClick={() => handlePlusButton(item.id)}>
                       +
                     </button>
                   </div>
