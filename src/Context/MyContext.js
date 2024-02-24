@@ -37,39 +37,59 @@ const MyContext = ({ children }) => {
     }
   };
 
-  // const handlePlusButton = (clickedItemId) => {
-  //   const updatedCartItems = cartItems.map((item) => {
-  //     if (item.id === clickedItemId) {
-  //       // Increment quantity by 1 for the clicked item
-  //       return { ...item, quantity: item.quantity + 1 };
-  //     }
-  //     console.log("this is the added quantity", item.quantity)
-  //     return item;
-  //   });
-  //   return updatedCartItems;
-  // };
-
-  const handlePlusButton = (clickedItemId) => {
+ const handlePlusButton = (clickedItemId) => {
     const updatedCartItems = cartItems.map((item) => {
       if (item.id === clickedItemId) {
         // Increment quantity by 1 for the clicked item
         return { ...item, quantity: item.quantity + 1 };
       }
+      const updatedPrice = totalCartPrice + (item.price * item.quantity);
+     settotalCartPrice(updatedPrice);
       console.log("this is the added quantity", item.quantity);
       return item;
     });
+    
     setcartItems(updatedCartItems); // Update cart state with the updated items
   };
 
-  // const handlePlusButton = cartItems.map((item)=>{
-  //     if(singleItem.id == item.id){
-  //       return{...cartItems, quantity:item.quantity+1}
-  //     }
-  // })
+  const handleMinusButton = (clickedItemId) => {
+    const updatedCartItems = cartItems.map((item) => {
+        if (item.id === clickedItemId) {
+            if(item.quantity > 1){
+                // Decrease quantity by 1 for the clicked item
+                return { ...item, quantity: item.quantity - 1 };
+            } else {
+                // const updatedPrice = totalCartPrice - (item.price * item.quantity);
+                // settotalCartPrice(updatedPrice);
+
+                // Filter out the clicked item from cartItems
+                const updatedItems = cartItems.filter(
+                    (cartItem) => cartItem.id !== item.id
+                );
+
+                const updatedPrice = totalCartPrice - item.price;
+                settotalCartPrice(updatedPrice);
+                setcartItems(updatedItems);
+                return null; // Return null since we're removing this item from the list
+            }
+        }
+        
+        console.log("this is the decreased quantity", item.quantity);
+        return item;
+    });
+
+    // Filter out null values (removed items) from updatedCartItems
+    const filteredCartItems = updatedCartItems.filter(item => item !== null);
+    setcartItems(filteredCartItems); // Update cart state with the updated items
+};
+
+
+  
 
   return (
     <useMyContext.Provider
       value={{
+        handleMinusButton,
         HandleShoppingCartClick,
         open,
         setOpen,

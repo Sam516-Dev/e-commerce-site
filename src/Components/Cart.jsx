@@ -10,7 +10,7 @@ const Cart = () => {
 
 
 
-  const { cartItems, handleDeleteCartItem, open, handlePlusButton,totalCartPrice, cartItemsInTheCart} =
+  const { cartItems, handleDeleteCartItem, open, handlePlusButton,totalCartPrice,handleMinusButton, cartItemsInTheCart} =
     useOurContext();
 
   if (open) {
@@ -54,7 +54,7 @@ const Cart = () => {
                   <div className="flex gap-5 rounded-full border bg-white hover:bg-orange-100 border-blue-900 justify-center w-36 p-1 items-center">
                     <button
                      
-                      className="text-blue-900 font-bold text-2xl"
+                      className="text-blue-900 font-bold text-2xl" onClick={() => handleMinusButton(item.id)}
                     >
                       -
                     </button>
