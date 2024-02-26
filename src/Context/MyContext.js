@@ -7,6 +7,7 @@ const MyContext = ({ children }) => {
   const [cartItems, setcartItems] = useState([]);
   const [totalCartPrice, settotalCartPrice] = useState(0);
   const [cartItemsInTheCart, setCartItemsInTheCart] = useState(1);
+  const [mytotalItems, setmytotalItems] = useState(0);
   // const [updateQuantity, setupdateQuantity] = useState(1)
   //function to switch between true and false
   const HandleShoppingCartClick = () => {
@@ -37,54 +38,69 @@ const MyContext = ({ children }) => {
     }
   };
 
- const handlePlusButton = (clickedItemId) => {
+  const handlePlusButton = (clickedItemId) => {
+    let updatedPrice = totalCartPrice; 
     const updatedCartItems = cartItems.map((item) => {
       if (item.id === clickedItemId) {
         // Increment quantity by 1 for the clicked item
-        return { ...item, quantity: item.quantity + 1 };
+        const updatedItem = { ...item, quantity: item.quantity + 1 };
+        updatedPrice += item.price; // Add the price of the clicked item to the total
+        return updatedItem;
       }
-      const updatedPrice = totalCartPrice + (item.price * item.quantity);
-     settotalCartPrice(updatedPrice);
-      console.log("this is the added quantity", item.quantity);
       return item;
     });
-    
+
+    const totalItems = updatedCartItems.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+    console.log(`Total items in the cart: ${totalItems}`);
+
+    setmytotalItems(totalItems);
+    settotalCartPrice(updatedPrice); // Update total cart price
     setcartItems(updatedCartItems); // Update cart state with the updated items
   };
 
+
+
+  // const myArray = [1, 2, 3, 4, 5];
+
+  // const sum = myArray.reduce((total, num) => {
+  //   return total + num;
+  // }, 0);
+  
+  // console.log(sum); 
+
   const handleMinusButton = (clickedItemId) => {
     const updatedCartItems = cartItems.map((item) => {
-        if (item.id === clickedItemId) {
-            if(item.quantity > 1){
-                // Decrease quantity by 1 for the clicked item
-                return { ...item, quantity: item.quantity - 1 };
-            } else {
-                // const updatedPrice = totalCartPrice - (item.price * item.quantity);
-                // settotalCartPrice(updatedPrice);
+      if (item.id === clickedItemId) {
+        if (item.quantity > 1) {
+          // Decrease quantity by 1 for the clicked item
+          return { ...item, quantity: item.quantity - 1 };
+        } else {
+          // const updatedPrice = totalCartPrice - (item.price * item.quantity);
+          // settotalCartPrice(updatedPrice);
 
-                // Filter out the clicked item from cartItems
-                const updatedItems = cartItems.filter(
-                    (cartItem) => cartItem.id !== item.id
-                );
+          // Filter out the clicked item from cartItems
+          const updatedItems = cartItems.filter(
+            (cartItem) => cartItem.id !== item.id
+          );
 
-                const updatedPrice = totalCartPrice - item.price;
-                settotalCartPrice(updatedPrice);
-                setcartItems(updatedItems);
-                return null; // Return null since we're removing this item from the list
-            }
+          const updatedPrice = totalCartPrice - item.price;
+          settotalCartPrice(updatedPrice);
+          setcartItems(updatedItems);
+          return null; // Return null since we're removing this item from the list
         }
-        
-        console.log("this is the decreased quantity", item.quantity);
-        return item;
+      }
+
+      console.log("this is the decreased quantity", item.quantity);
+      return item;
     });
 
     // Filter out null values (removed items) from updatedCartItems
-    const filteredCartItems = updatedCartItems.filter(item => item !== null);
+    const filteredCartItems = updatedCartItems.filter((item) => item !== null);
     setcartItems(filteredCartItems); // Update cart state with the updated items
-};
-
-
-  
+  };
 
   return (
     <useMyContext.Provider
@@ -101,6 +117,7 @@ const MyContext = ({ children }) => {
         cartItemsInTheCart,
         setCartItemsInTheCart,
         cartItemsInTheCart,
+        mytotalItems,
       }}
     >
       {children}

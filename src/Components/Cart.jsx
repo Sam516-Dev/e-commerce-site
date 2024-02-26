@@ -10,7 +10,7 @@ const Cart = () => {
 
 
 
-  const { cartItems, handleDeleteCartItem, open, handlePlusButton,totalCartPrice,handleMinusButton, cartItemsInTheCart} =
+  const { cartItems, handleDeleteCartItem, open, handlePlusButton,totalCartPrice,handleMinusButton} =
     useOurContext();
 
   if (open) {
