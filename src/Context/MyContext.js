@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const useMyContext = createContext();
 
@@ -13,6 +13,24 @@ const MyContext = ({ children }) => {
   const HandleShoppingCartClick = () => {
     setOpen(!open);
   };
+
+  const [data, setData] = useState([]);
+
+  // const [loading, setLoading] = useState(false);
+
+  async function fetchData() {
+    const response = await fetch("https://fakestoreapi.com/products?limit=12");
+    const fetchedData = await response.json();
+    setData(fetchedData);
+    // setLoading(false);
+    console.log("data from useEffect hook ", fetchedData);
+  }
+
+  useEffect(() => {
+    fetchData();
+    console.log("fetching data... ");
+  }, []);
+
 
   const handleDeleteCartItem = (item) => {
     const updatedItems = cartItems.filter(
@@ -118,6 +136,7 @@ const MyContext = ({ children }) => {
         setCartItemsInTheCart,
         cartItemsInTheCart,
         mytotalItems,
+        data
       }}
     >
       {children}
