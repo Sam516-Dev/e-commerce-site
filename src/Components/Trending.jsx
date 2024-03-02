@@ -1,24 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import TrendingCard from "./TrendingCard";
+import { useOurContext } from "../Context/MyContext";
 
 const Trending = () => {
-  const [data, setData] = useState([]);
 
-  // const [loading, setLoading] = useState(false);
 
-  async function fetchData() {
-    const response = await fetch("https://fakestoreapi.com/products?limit=12");
-    const fetchedData = await response.json();
-    setData(fetchedData);
-    // setLoading(false);
-    console.log("data from useEffect hook ", fetchedData);
-  }
+ 
+  const { data } = useOurContext();
 
-  useEffect(() => {
-    fetchData();
-    console.log("fetching data... ");
-  }, []);
 
   return (
     <div className="mt-20  mx-32">

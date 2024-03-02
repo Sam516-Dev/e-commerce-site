@@ -6,7 +6,7 @@ import {
 } from "react-icons/ai";
 import { useOurContext } from "../Context/MyContext";
 
-const TrendingCard = ({ item }) => {
+const OurProductsCard = ({ item }) => {
   const { image, category, title, rating, price, id } = item;
 
   const { handleAddToCart } = useOurContext();
@@ -45,23 +45,12 @@ const TrendingCard = ({ item }) => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center">
-        <p className="flex text-blue-950 font-bold text-xl">Ksh.{price}</p>
-        <div
-          className="flex relative items-center"
-          onClick={() => handleAddToCart(item)}
-        >
-          <AiOutlineShoppingCart className="flex ml-3 cursor-pointer text-orange-500 group-hover:text-black absolute w-7 h-7" />
-          <button className="flex pl-12 rounded-md text-orange-500 bg-orange-50 group-hover:bg-orange-500 p-3 group-hover:text-black font-medium ">
-            Add To Cart
-          </button>
-        </div>
-      </div>
-
-
-
+      <button className=" w-full items-center  rounded-md bg-orange-100 p-3 text-orange-500 group-hover:bg-orange-500 group-hover:text-white font-medium ">
+        View More
+      </button>
     </div>
   );
 };
 
-export default TrendingCard;
+
+export default OurProductsCard;
