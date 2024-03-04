@@ -7,7 +7,7 @@ const Hero = () => {
        
         <div className=" ">
           <p className=" text-base   font-medium text-orange-500">
-            Starting from $500
+            Starting from $1000
           </p>
 
           <h1 className="text-4xl font-black text-blue-900 mt-5">
