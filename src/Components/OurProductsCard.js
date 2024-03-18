@@ -1,13 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   AiOutlineShoppingCart,
   AiOutlineHeart,
   AiFillStar,
+  AiFillHeart
 } from "react-icons/ai";
 import { useOurContext } from "../Context/MyContext";
 
 const OurProductsCard = ({ item }) => {
   const { image, category, title, rating, price, id } = item;
+
+  const [favourite, setfavourite] = useState("false");
+
+  const Switch = () => {
+    setfavourite(!favourite);
+  };
 
   const { handleAddToCart } = useOurContext();
 
@@ -16,7 +23,17 @@ const OurProductsCard = ({ item }) => {
       key={id}
       className=" group w-80 h-96 hover:shadow-2xl hover:border-orange-300 relative flex flex-col border justify-between px-3 py-2 p-1 rounded-md shadow-lg border-blue-200"
     >
-      <AiOutlineHeart className=" absolute right-5 w-7 h-7 text-orange-500" />
+      {favourite ? (
+        <AiOutlineHeart
+          onClick={Switch}
+          className=" absolute right-5 w-7 cursor-pointer h-7 text-orange-500"
+        />
+      ) : (
+        <AiFillHeart
+          onClick={Switch}
+          className=" absolute right-5 w-7 cursor-pointer h-7 text-orange-500"
+        />
+      )}
       <img
         src={image}
         alt=""
@@ -51,6 +68,5 @@ const OurProductsCard = ({ item }) => {
     </div>
   );
 };
-
 
 export default OurProductsCard;
