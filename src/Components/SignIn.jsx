@@ -10,7 +10,7 @@ const SignIn = () => {
         </h2>
         <div className="flex flex-col gap-5 mt-5">
           <input
-            className="w-full p-3 border  focus:border-blue-400 focus:py-4 font-semibold text-blue-800 rounded-md outline-none"
+            className="w-full p-3 border focus:border-blue-400 focus:py-4 font-semibold text-blue-800 rounded-md outline-none"
             placeholder="Enter Username"
           />
           <input
@@ -25,8 +25,7 @@ const SignIn = () => {
             className="w-full p-3 font-semibold border  focus:border-blue-400 focus:py-4 text-blue-800 rounded-md outline-none"
             placeholder="Confirm Password"
           />
-          <button className="p-3 mt-8 bg-blue-900  text-white rounded-md text-xl font-semibold uppercase">
-            {" "}
+          <button className="p-3 mt-8 bg-blue-900 hover:bg-blue-950  text-white rounded-md text-xl font-semibold uppercase">
             Sign In
           </button>
           <div className="flex gap-3 justify-center mt-2">
