@@ -6,7 +6,7 @@ import { useOurContext } from "../Context/MyContext";
 import "../style/cartblurr.css";
 
 const Cart = () => {
-  // const { open } = useOurContext();
+
 
 
 
@@ -24,7 +24,6 @@ const Cart = () => {
                 SHOPPING CART
               </h1>
             </div>
-            {/* <RxCross2 className=" w-7 h-7" /> */}
             <MdDeleteOutline className=" w-7 h-7" />
           </div>
 
