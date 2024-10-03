@@ -9,7 +9,7 @@ import {
 import AboutUs from "./Components/AboutUs";
 import Home from "./Components/Home";
 import OurProducts from "./Components/OurProducts";
-import SignIn from "./Components/SignIn";
+import Wishlist from "./Components/Wishlist";
 function App() {
   return (
     <div className="  overflow-y-auto">
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/OurProducts" element={<OurProducts />} />
-          <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/Wishlist" element={<Wishlist />} />
           <Route path="/AboutUs" element={<AboutUs />} />
         </Routes>
       </Router>

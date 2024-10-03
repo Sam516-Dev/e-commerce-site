@@ -1,5 +1,6 @@
 import React from "react";
 import Hoodies from "../Assets/Hoodies.png";
+
 const Hero = () => {
   return (
     <>
