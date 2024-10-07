@@ -30,7 +30,7 @@ const Hero = () => {
         </div>
 
         <div className="flex ">
-          <img className=" w-96 h-96" src={Hoodies} alt="hoodies image" />
+          <img className=" w-96 h-96" src={Hoodies} alt="hoodies" />
         </div>
       </div>
     </>

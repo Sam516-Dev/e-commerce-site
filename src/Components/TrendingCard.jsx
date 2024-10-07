@@ -15,7 +15,7 @@ const TrendingCard = ({ item }) => {
   const Switch = () => {
     setfavourite(!favourite);
   };
-  // console.log(" you clicked me", favourite);
+
 
   const { handleAddToCart } = useOurContext();
 
@@ -47,7 +47,6 @@ const TrendingCard = ({ item }) => {
           {category}
         </label>
         <h3 className=" font-bold text-base text-blue-900">
-          {" "}
           {title.slice(0, 30)}...
         </h3>
 
