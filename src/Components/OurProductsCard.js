@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   AiOutlineShoppingCart,
   AiOutlineHeart,
   AiFillStar,
-  AiFillHeart
+  AiFillHeart,
 } from "react-icons/ai";
 import { useOurContext } from "../Context/MyContext";
 
@@ -16,7 +16,12 @@ const OurProductsCard = ({ item }) => {
     setfavourite(!favourite);
   };
 
-  const { handleAddToCart } = useOurContext();
+  const HandleViewMore = () => {
+    console.log("Hi there Sam !");
+    console.log("item clicked is", item)
+  };
+
+  //const { handleAddToCart } = useOurContext();
 
   return (
     <div
@@ -62,7 +67,10 @@ const OurProductsCard = ({ item }) => {
         </div>
       </div>
 
-      <button className=" w-full items-center  rounded-md bg-orange-100 p-3 text-orange-500 group-hover:bg-orange-500 group-hover:text-white font-medium ">
+      <button
+        onClick={HandleViewMore}
+        className=" w-full items-center  rounded-md bg-orange-100 p-3 text-orange-500 group-hover:bg-orange-500 group-hover:text-white font-medium "
+      >
         View More
       </button>
     </div>
