@@ -9,7 +9,7 @@ const Navbar = () => {
   const { cartItems } = useOurContext();
 
   return (
-    <div className="bg-blue-200 h-24 p-4 px-14 pt-6 fixed w-full top-0 z-20">
+    <div className="bg-green-600 h-24 p-4 px-14 pt-6 fixed w-full top-0 z-20">
       <nav className="flex gap-36 justify-between items-center">
         <div>
           <img className="h-16" src={Logo12} alt="logo" />
